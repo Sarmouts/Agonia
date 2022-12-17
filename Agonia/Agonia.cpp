@@ -1,7 +1,6 @@
 ﻿#include"Player.h"
 #include"Computer.h"
 #include"Trapoulas.h"
-#include<string>
 void stirTrapoula()
 {
 	std::vector<std::string> temp;

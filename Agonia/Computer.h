@@ -16,7 +16,7 @@ std::string BestPossSol()
 	int type[4] = { 0 };
 	std::vector<std::string> sol;
 	for (int i = 0; i < compTrap.size(); i++) {
-		if (compTrap[i][compTrap[i].size() - 1] == Tablecard[Tablecard.size() - 1])
+		if (compTrap[i][compTrap[i].size() - 1] == Tablecard[Tablecard.size() - 1] && compTrap[i][0] != 'A')
 			sol.push_back(compTrap[i]);
 		if (compTrap[i][0] != 'A')
 			type[compTrap[i][compTrap[i].size() - 1] - 3]++;
