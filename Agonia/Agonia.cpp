@@ -38,6 +38,7 @@ int main()
 	Tablecard = trapoula[37];//Fillo sto trapezi
 	trapoula.pop_back();
 	bool NowPlaying = 1;
+	//playerTrap = { "9\3","9\4", "9\5", "9\6" };
 	while (!playerTrap.empty() && !compTrap.empty())
 	{
 		if (NowPlaying)
@@ -61,7 +62,7 @@ int main()
 			}
 			Move(playerTrap[pos]);
 			NowPlaying -= 1;
-			if (!Tablecard[0] == '9') NowPlaying -= 1;
+			if (Tablecard[0] == '9') NowPlaying -= 1;
 			playerTrap[pos] = playerTrap[playerTrap.size() - 1];
 			playerTrap.pop_back();
 			system("pause");

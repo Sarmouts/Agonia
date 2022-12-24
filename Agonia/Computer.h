@@ -44,7 +44,7 @@ std::string BestPossSol()
 	for (int i = 0; i < 4; i++) {
 		if (type[i] > a)
 		{
-			maxpos = type[i];
+			maxpos = i;
 			a = type[i];
 		}
 	}
