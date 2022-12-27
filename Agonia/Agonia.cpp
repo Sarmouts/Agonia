@@ -14,15 +14,15 @@ void stirTrapoula()
 	}
 	trapoula = temp;
 }
-void Init(std::vector<std::string>* a, std::vector<std::string>* b)
+void Init()
 {
 	bool j = 1;
 	for (int i = 0; i < 14; i++, j -= 1)
 	{
 		if (j)
-			(*a).push_back(trapoula[trapoula.size() - 1]);
+			playerTrap.push_back(trapoula[trapoula.size() - 1]);
 		else
-			(*b).push_back(trapoula[trapoula.size() - 1]);
+			compTrap.push_back(trapoula[trapoula.size() - 1]);
 		trapoula.pop_back();
 	}
 }
@@ -34,7 +34,7 @@ void PrintTrap(std::vector<std::string> v)
 int main()
 {
 	stirTrapoula();//Anakatema Trapoulas
-	Init(&playerTrap, &compTrap);//Moirasma
+	Init();//Moirasma
 	Tablecard = trapoula[37];//Fillo sto trapezi
 	trapoula.pop_back();
 	bool NowPlaying = 1;
@@ -69,12 +69,17 @@ int main()
 		}
 		else {
 			std::string res = BestPossSol();
+			std::cout << "Table Card: |" << Tablecard << "|\n\n";
+			//std::cout << "Computer's move: " << res << "\n";
+			//system("pause");
 			if (res == "")
 			{
+				std::cout << "Computer's move: " << -1 << "\n";
 				compTrap.push_back(trapoula[trapoula.size() - 1]);
 				trapoula.pop_back();
 			}
 			else {
+				std::cout << "Computer's move: " << res << "\n";
 				MoveC(res);
 				auto it = std::find(compTrap.begin(), compTrap.end(), res);
 				compTrap[it - compTrap.begin()] = compTrap[compTrap.size() - 1];
@@ -82,6 +87,7 @@ int main()
 			}
 			NowPlaying -= 1;
 			if (res[0] == '9') NowPlaying -= 1;
+			system("pause");
 		}
 		stirTrapoula();
 	}
