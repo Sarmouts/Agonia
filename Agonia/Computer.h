@@ -1,7 +1,6 @@
 #pragma once
 #include"Trapoulas.h"
 #include<algorithm>
-std::string previous = "";
 bool compare(std::string a, std::string b)
 {
 	if (isalpha(a[0]))
@@ -55,7 +54,7 @@ void MoveC(std::string card)
 	int add = 0;
 	if (card[0] == 'A')
 	{
-		previous = card;
+		prev = card;
 		card = symbs[maxpos];
 	}
 	else if (card[0] == '8') add = 3;
@@ -65,6 +64,6 @@ void MoveC(std::string card)
 		trapoula.pop_back();
 	}
 	if (Tablecard.size() != 1) trapoula.push_back(Tablecard);
-	else trapoula.push_back(previous);
+	else trapoula.push_back(prev);
 	Tablecard = card;
 }

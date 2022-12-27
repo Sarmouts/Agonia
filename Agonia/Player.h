@@ -1,6 +1,5 @@
 #pragma once
 #include"Trapoulas.h"
-std::string prev = "";
 bool Check(std::string pcard)
 {
 	if (pcard[0] == 'A')

@@ -58,3 +58,4 @@ std::vector<std::string> trapoula = {
 };
 std::vector<std::string> playerTrap, compTrap;
 std::string Tablecard;
+std::string prev = "";
